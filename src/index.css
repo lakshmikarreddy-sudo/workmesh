@@ -1,0 +1,1473 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #17202a;
+  background: #f8f9f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 64px 8vw;
+}
+
+.home-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #5d6670;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin: 32px 0;
+  font-size: 20px;
+  line-height: 1.55;
+  color: #68727d;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 15px 22px;
+  background: #253b80;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(37, 59, 128, 0.55);
+  outline-offset: 2px;
+}
+
+/* Process Map */
+
+.process-map {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 8vw 96px;
+}
+
+.process-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e4e2dc;
+}
+
+.process-map-header .eyebrow {
+  margin: 0;
+}
+
+.back-button {
+  padding: 8px 0;
+  background: transparent;
+  color: #253b80;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.process-intro {
+  max-width: 720px;
+  padding: 64px 0 48px;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #253b80;
+}
+
+.process-title {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.02;
+}
+
+.process-description {
+  margin: 20px 0 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #68727d;
+}
+
+.task-count {
+  margin: 28px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d6670;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.task-list > li {
+  display: flex;
+}
+
+.task-card {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  padding: 28px 28px 30px;
+  background: #ffffff;
+  border: 1px solid #e4e2dc;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 32, 42, 0.04);
+  color: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  opacity: 1;
+  border-color: #c5cbe0;
+  box-shadow: 0 4px 14px rgba(23, 32, 42, 0.06);
+}
+
+.task-card:focus-visible {
+  outline: 2px solid rgba(37, 59, 128, 0.55);
+  outline-offset: 3px;
+}
+
+.task-number {
+  flex-shrink: 0;
+  min-width: 28px;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: #253b80;
+  padding-top: 3px;
+}
+
+.task-name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: #17202a;
+}
+
+.task-description {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #68727d;
+}
+
+@media (max-width: 760px) {
+  .process-map {
+    padding: 32px 16px 64px;
+  }
+
+  .process-intro {
+    padding: 40px 0 32px;
+  }
+
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Task Intelligence */
+
+.task-intel {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 8vw 96px;
+}
+
+.task-intel-intro {
+  max-width: 760px;
+  padding: 64px 0 56px;
+}
+
+.task-intel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.characteristics {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e4e2dc;
+  border-radius: 6px;
+}
+
+.characteristic-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.characteristic {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 32px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #efede8;
+}
+
+.characteristic:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.characteristic-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #17202a;
+}
+
+.score {
+  display: flex;
+  gap: 3px;
+}
+
+.score-step {
+  width: 20px;
+  height: 4px;
+  border-radius: 1px;
+  background: #ebe9e4;
+}
+
+.score-step.filled {
+  background: #253b80;
+}
+
+.score-value {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #68727d;
+  text-align: right;
+}
+
+.recommendation {
+  padding: 44px 44px 48px;
+  background: #17202a;
+  color: #f8f9f7;
+  border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(23, 32, 42, 0.14);
+}
+
+.recommendation-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a9b6e6;
+}
+
+.recommendation-mode {
+  margin: 28px 0 0;
+  font-size: clamp(38px, 4.2vw, 56px);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+}
+
+.recommendation-confidence {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(248, 249, 247, 0.14);
+}
+
+.recommendation-meta-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8f99a6;
+}
+
+.recommendation-confidence-value {
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.recommendation-reason {
+  margin-top: 32px;
+}
+
+.recommendation-reason-text {
+  margin: 12px 0 0;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #e8ebf0;
+}
+
+.recommendation-alternative {
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #8f99a6;
+}
+
+@media (max-width: 900px) {
+  .task-intel-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .recommendation {
+    order: -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .task-intel {
+    padding: 32px 16px 64px;
+  }
+
+  .task-intel-intro {
+    padding: 40px 0 32px;
+  }
+
+  .characteristics {
+    padding: 24px;
+  }
+
+  .recommendation {
+    padding: 32px 24px;
+  }
+}
+
+.task-intel-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+
+/* Workforce Allocation */
+
+.allocation {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Side padding is capped so the task rows keep their width on wide screens. */
+  padding: 48px min(8vw, 120px) 96px;
+}
+
+.allocation-intro {
+  max-width: 760px;
+  padding: 64px 0 56px;
+}
+
+.allocation-count {
+  margin: 32px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #253b80;
+}
+
+.mode-human {
+  background: #17202a;
+}
+
+.mode-human-ai {
+  background: #253b80;
+}
+
+.mode-ai {
+  background: #6f84c9;
+}
+
+.mode-automation {
+  background: #c3cbe6;
+}
+
+.mode-swatch {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+.mix {
+  padding: 48px 48px 44px;
+  background: #ffffff;
+  border: 1px solid #e4e2dc;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 32, 42, 0.04);
+}
+
+.mix-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mix-heading .section-label {
+  margin: 0;
+}
+
+.mix-caption {
+  margin: 0;
+  font-size: 15px;
+  color: #68727d;
+}
+
+.mix-bar {
+  display: flex;
+  gap: 3px;
+  height: 12px;
+  margin-top: 32px;
+}
+
+.mix-segment {
+  flex-basis: 0;
+  border-radius: 1px;
+}
+
+.mix-values {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.mix-value {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 24px;
+  border-left: 1px solid #efede8;
+}
+
+.mix-value:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.mix-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4b5560;
+}
+
+.mix-percent {
+  font-size: 48px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: #17202a;
+}
+
+.allocation-tasks {
+  padding-top: 88px;
+}
+
+.allocation-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 72px;
+}
+
+.allocation-row {
+  display: grid;
+  grid-template-columns: 28px minmax(212px, 1fr) 148px;
+  align-items: center;
+  column-gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid #e4e2dc;
+}
+
+.allocation-row .task-number {
+  padding-top: 0;
+  font-size: 16px;
+}
+
+.allocation-name {
+  max-width: 212px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #17202a;
+}
+
+.allocation-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 140px;
+  padding-left: 24px;
+  border-left: 1px solid #efede8;
+  text-align: right;
+}
+
+.allocation-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 650;
+  color: #17202a;
+  white-space: nowrap;
+}
+
+.allocation-confidence {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: #8a929b;
+}
+
+@media (max-width: 1120px) {
+  .allocation-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .mix-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 28px;
+  }
+
+  .mix-value:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .allocation {
+    padding: 32px 16px 64px;
+  }
+
+  .allocation-intro {
+    padding: 40px 0 32px;
+  }
+
+  .mix {
+    padding: 28px 24px;
+  }
+
+  .mix-percent {
+    font-size: 36px;
+  }
+
+  .allocation-row {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    column-gap: 16px;
+    padding: 24px 0;
+  }
+
+  .allocation-name {
+    max-width: none;
+    font-size: 18px;
+  }
+
+  .allocation-result {
+    min-width: 0;
+    padding-left: 16px;
+  }
+
+  .allocation-mode {
+    font-size: 16px;
+  }
+
+  .allocation-tasks {
+    padding-top: 0;
+    margin-top: 56px;
+  }
+
+  .task-intel-actions {
+    justify-content: stretch;
+  }
+
+  .task-intel-actions button {
+    width: 100%;
+  }
+}
+
+
+/* Workforce Blueprint */
+
+.blueprint {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 8vw 96px;
+}
+
+.blueprint-intro {
+  max-width: 760px;
+  padding: 64px 0 56px;
+}
+
+.future {
+  padding: 48px 48px 52px;
+  background: #ffffff;
+  border: 1px solid #e4e2dc;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 32, 42, 0.04);
+}
+
+.future-bar {
+  display: flex;
+  gap: 3px;
+  height: 16px;
+  margin-top: 32px;
+}
+
+.future-layers {
+  display: grid;
+  margin-top: 40px;
+}
+
+.future-layer {
+  min-width: 0;
+  padding: 0 32px;
+  border-left: 1px solid #efede8;
+}
+
+.future-layer:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.future-layer:last-child {
+  padding-right: 0;
+}
+
+.future-layer-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #4b5560;
+}
+
+.future-layer-share {
+  margin: 16px 0 0;
+  font-size: clamp(44px, 4.6vw, 60px);
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  color: #17202a;
+}
+
+.future-layer-role {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #68727d;
+}
+
+.future-layer-heading {
+  margin: 36px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid #efede8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #253b80;
+}
+
+.future-task-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.future-task {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.future-task-name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #17202a;
+}
+
+.future-task-detail {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #68727d;
+}
+
+.future-task-empty {
+  margin: 16px 0 0;
+  font-size: 15px;
+  color: #8a929b;
+}
+
+.capacity {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  padding-top: 64px;
+}
+
+.capacity-statement {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #4b5560;
+}
+
+.capacity-statement strong {
+  font-weight: 700;
+  color: #17202a;
+}
+
+
+@media (max-width: 900px) {
+  .future-layers {
+    grid-template-columns: 1fr !important;
+    row-gap: 40px;
+  }
+
+  .future-layer {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .future-layer + .future-layer {
+    padding-top: 40px;
+    border-top: 1px solid #efede8;
+  }
+
+  .capacity {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .blueprint {
+    padding: 32px 16px 64px;
+  }
+
+  .blueprint-intro {
+    padding: 40px 0 32px;
+  }
+
+  .future {
+    padding: 28px 24px 32px;
+  }
+
+  .capacity {
+    padding-top: 48px;
+  }
+
+  .capacity-statement {
+    font-size: 18px;
+  }
+
+}
+
+
+/*
+ * Desktop density
+ *
+ * On desktop the primary content of each decision screen should fit in
+ * one viewport. Vertical spacing scales with viewport height, and the
+ * Allocation and Blueprint screens place related content side by side.
+ * Mobile and tablet layouts are unaffected.
+ */
+
+@media (min-width: 1100px) {
+  .process-map,
+  .task-intel,
+  .allocation,
+  .blueprint {
+    padding-top: clamp(16px, 2.4vh, 32px);
+    padding-bottom: clamp(16px, 2.4vh, 40px);
+  }
+
+  .process-map-header {
+    padding-bottom: 14px;
+  }
+
+  .back-button {
+    padding: 4px 0;
+  }
+
+  .section-label {
+    margin-bottom: 10px;
+  }
+
+  .process-intro,
+  .task-intel-intro,
+  .allocation-intro,
+  .blueprint-intro {
+    padding: clamp(14px, 2.6vh, 40px) 0 clamp(14px, 2.2vh, 32px);
+  }
+
+  .process-description {
+    margin-top: 12px;
+  }
+
+  /* Process Map */
+
+  .process-intro {
+    max-width: 900px;
+  }
+
+  .task-count {
+    margin-top: 14px;
+  }
+
+  .task-list {
+    gap: 12px;
+  }
+
+  .task-card {
+    padding: clamp(16px, 2.2vh, 24px) 26px;
+  }
+
+  .task-description {
+    margin-top: 6px;
+  }
+
+  /* Task Intelligence */
+
+  .characteristics {
+    padding: 28px 32px;
+  }
+
+  .characteristic {
+    padding: clamp(10px, 1.5vh, 14px) 0;
+  }
+
+  .recommendation {
+    padding: 36px 40px;
+  }
+
+  .recommendation-mode {
+    margin-top: 20px;
+  }
+
+  .recommendation-confidence {
+    margin-top: clamp(24px, 3.5vh, 32px);
+    padding-bottom: clamp(20px, 3vh, 28px);
+  }
+
+  .recommendation-reason {
+    margin-top: clamp(20px, 3vh, 28px);
+  }
+
+  .task-intel-actions {
+    margin-top: clamp(20px, 3vh, 28px);
+  }
+
+  /* Workforce Allocation: title with the description beside it */
+
+  .allocation-intro {
+    max-width: none;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "label label"
+      "title description"
+      "count description";
+    column-gap: 56px;
+    align-items: end;
+    padding: clamp(20px, 3.6vh, 44px) 0 clamp(20px, 3vh, 40px);
+  }
+
+  .allocation-intro .section-label {
+    grid-area: label;
+  }
+
+  .allocation-intro .process-title {
+    grid-area: title;
+  }
+
+  .allocation-intro .process-description {
+    grid-area: description;
+    max-width: 460px;
+    margin: 0;
+  }
+
+  .allocation-count {
+    grid-area: count;
+    margin-top: 12px;
+  }
+
+  .mix {
+    padding: clamp(22px, 2.8vh, 36px) 36px;
+  }
+
+  .mix-bar {
+    margin-top: clamp(16px, 2.2vh, 24px);
+  }
+
+  .mix-values {
+    margin-top: clamp(18px, 2.8vh, 32px);
+  }
+
+  .mix-value {
+    gap: 10px;
+  }
+
+  .allocation-tasks {
+    padding-top: clamp(28px, 3.6vh, 52px);
+  }
+
+  .allocation-list {
+    margin-top: 0;
+  }
+
+  .allocation-row {
+    padding: clamp(11px, 1.4vh, 18px) 0;
+  }
+
+  .allocation .task-intel-actions {
+    margin-top: clamp(20px, 2.4vh, 36px);
+  }
+
+  /* Workforce Blueprint: 12-column grid, intro beside the capacity statements */
+
+  .blueprint {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 40px;
+    align-content: start;
+  }
+
+  .blueprint > .process-map-header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .blueprint {
+    padding-left: min(8vw, 120px);
+    padding-right: min(8vw, 120px);
+  }
+
+  .blueprint-intro {
+    grid-column: 1 / 9;
+    grid-row: 2;
+    max-width: none;
+    padding: clamp(20px, 3vh, 44px) 0 clamp(18px, 2.6vh, 40px);
+  }
+
+  .blueprint-intro .process-description {
+    max-width: 640px;
+  }
+
+  .capacity {
+    grid-column: 9 / -1;
+    grid-row: 2;
+    align-self: end;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 0 clamp(18px, 2.6vh, 40px);
+  }
+
+  .capacity-statement {
+    font-size: 17px;
+  }
+
+  .future {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding: clamp(24px, 3vh, 40px) 40px clamp(20px, 2.6vh, 36px);
+  }
+
+  .future-bar {
+    margin-top: clamp(16px, 2.2vh, 24px);
+  }
+
+  .future-layers {
+    margin-top: clamp(20px, 2.6vh, 32px);
+  }
+
+  .future-layer-share {
+    margin-top: 10px;
+  }
+
+  .future-layer-role {
+    margin-top: 6px;
+  }
+
+  .future-layer-heading {
+    margin-top: clamp(14px, 2.2vh, 22px);
+    padding-top: 14px;
+  }
+
+  .future-layer {
+    padding: 0 24px;
+  }
+
+  /* Wide layers (e.g. Automation) list their tasks in two columns */
+  .future-task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    column-gap: 24px;
+    margin-top: 4px;
+  }
+
+  .future-task {
+    padding: 7px 0;
+  }
+
+}
+
+
+/* What-If Simulation */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.simulation {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px min(8vw, 120px) 96px;
+}
+
+.simulation-intro {
+  max-width: 760px;
+  padding: 64px 0 48px;
+}
+
+.sim-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  background: #ffffff;
+  border: 1px solid #e4e2dc;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(23, 32, 42, 0.04);
+}
+
+.sim-control {
+  padding: 40px 48px 44px 40px;
+}
+
+.sim-control-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sim-control-heading .section-label {
+  display: block;
+  margin: 0;
+}
+
+.sim-baseline-note {
+  margin: 0;
+  font-size: 14px;
+  color: #68727d;
+}
+
+.sim-adoption-value {
+  margin: 16px 0 24px;
+  font-size: clamp(56px, 6vw, 80px);
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: #17202a;
+}
+
+/* Slider: a native range input over a custom track */
+
+.sim-slider {
+  position: relative;
+  height: 32px;
+}
+
+.sim-track {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  border-radius: 3px;
+  background: #e6e8ef;
+}
+
+.sim-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+  background: #253b80;
+}
+
+.sim-baseline-marker {
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: 20px;
+  margin-left: -1px;
+  background: #17202a;
+}
+
+.sim-slider input[type="range"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sim-slider input[type="range"]:focus {
+  outline: none;
+}
+
+.sim-slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 32px;
+  background: transparent;
+}
+
+.sim-slider input[type="range"]::-moz-range-track {
+  height: 32px;
+  background: transparent;
+}
+
+.sim-slider input[type="range"]::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  border: 2px solid #253b80;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(23, 32, 42, 0.18);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sim-slider input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #253b80;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(23, 32, 42, 0.18);
+}
+
+.sim-slider input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(37, 59, 128, 0.22);
+}
+
+.sim-slider input[type="range"]:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(37, 59, 128, 0.22);
+}
+
+.sim-scale {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #8a929b;
+}
+
+.sim-scale-baseline {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-weight: 600;
+  color: #17202a;
+}
+
+.sim-scale-max {
+  color: #4b5560;
+}
+
+.sim-mix-label {
+  margin-top: 40px;
+}
+
+.sim-mix {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.sim-mix-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #efede8;
+}
+
+.sim-mix-item:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.sim-mix-value {
+  font-size: 44px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: #17202a;
+}
+
+.sim-compare {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 40px 40px;
+  border-left: 1px solid #efede8;
+}
+
+.sim-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.sim-table th,
+.sim-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #efede8;
+  text-align: right;
+  font-size: 15px;
+  white-space: nowrap;
+  color: #17202a;
+}
+
+.sim-table thead th {
+  padding-top: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a929b;
+}
+
+.sim-table tbody th {
+  text-align: left;
+  font-weight: 600;
+}
+
+.sim-table th + th,
+.sim-table th + td,
+.sim-table td + td {
+  padding-left: 16px;
+}
+
+.sim-table-adoption th,
+.sim-table-adoption td {
+  border-bottom-color: #d9d6ce;
+}
+
+.sim-delta {
+  font-weight: 600;
+  color: #253b80 !important;
+}
+
+.sim-delta-none {
+  color: #8a929b !important;
+}
+
+.sim-statement {
+  margin: 24px 0 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #17202a;
+}
+
+.sim-model-note {
+  margin: auto 0 0;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #8a929b;
+}
+
+@media (max-width: 900px) {
+  .sim-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sim-compare {
+    border-left: 0;
+    border-top: 1px solid #efede8;
+  }
+}
+
+@media (max-width: 760px) {
+  .simulation {
+    padding: 32px 16px 64px;
+  }
+
+  .simulation-intro {
+    padding: 40px 0 32px;
+  }
+
+  .sim-control,
+  .sim-compare {
+    padding: 28px 20px;
+  }
+
+  .sim-mix {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .sim-mix-item,
+  .sim-mix-item:first-child {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-left: 0;
+    border-top: 1px solid #efede8;
+  }
+
+  .sim-mix-value {
+    font-size: 30px;
+  }
+
+  .sim-table th,
+  .sim-table td {
+    font-size: 13px;
+  }
+
+  .sim-table thead th {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .sim-table th + th,
+  .sim-table th + td,
+  .sim-table td + td {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .sim-table td:last-child {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1100px) {
+  .simulation {
+    padding-top: clamp(16px, 2.4vh, 32px);
+    padding-bottom: clamp(16px, 2.4vh, 40px);
+  }
+
+  .simulation-intro {
+    padding: clamp(20px, 3.6vh, 44px) 0 clamp(20px, 3.4vh, 40px);
+  }
+
+  .blueprint > .task-intel-actions {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: clamp(14px, 2vh, 28px);
+  }
+}
