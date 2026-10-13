@@ -3,7 +3,7 @@
 
 **WorkMesh is a task-level workforce decision intelligence application that helps organizations analyze business processes and determine how work should be distributed across humans, AI, and automation.**
 
-[**Live Demo**](https://workmesh-five.vercel.app/) · [**GitHub Repository**](https://github.com/lakshmikarimireddy-sudo/workmesh)
+[**Live Demo**](https://workmesh-five.vercel.app/) · [**GitHub Repository**](https://github.com/lakshmikarreddy-sudo/workmesh)
 
 ## The Problem
 
